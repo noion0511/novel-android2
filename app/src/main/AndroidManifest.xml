@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.team3.showbee">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_bee"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_bee_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ShowBee"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ui.view.BoardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.NovelListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.UpdateFinancialActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.UpdateUserInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.CategoryTransferActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.CategoryLifeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.CategoryHobbyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.CategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.UserAccountActivity"
+            android:exported="false" />
+        <activity android:name=".ui.view.AddIncomeExpenditureActivity" />
+        <activity android:name=".ui.view.AddFinancialActivity" />
+        <activity android:name=".ui.view.GetFinancialActivity" />
+        <activity android:name=".ui.view.LogInActivity" />
+        <activity
+            android:name=".ui.view.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.view.SignUpActivity" />
+    </application>
+
+</manifest>

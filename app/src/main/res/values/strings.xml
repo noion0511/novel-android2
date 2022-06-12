@@ -1,0 +1,109 @@
+<resources>
+    <string name="app_name">ShowBee</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="show_bee">Show Bee</string>
+
+    <!-- calendar strings -->
+    <string name="fg_cal_mon">2020년 07월</string>
+    <string name="fg_cal_pre">P</string>
+    <string name="fg_cal_next">N</string>
+
+    <string name="sun">일</string>
+    <string name="mon">월</string>
+    <string name="tue">화</string>
+    <string name="wed">수</string>
+    <string name="thu">목</string>
+    <string name="fri">금</string>
+    <string name="sat">토</string>
+
+    <string name="income">수입</string>
+    <string name="income2">310,000원</string>
+    <string name="expense">지출</string>
+    <string name="expense2">300,000원</string>
+
+    <string name="title">제목</string>
+    <string name="choice_day">날짜</string>
+    <string name="category">분류</string>
+    <string name="repetition">반복</string>
+    <string name="price">금액</string>
+    <string name="notification">알림</string>
+    <string name="add_friend">친구추가</string>
+    <string name="memo">메모</string>
+    <string name="choice_day2">날짜를 선택해주세요.</string>
+    <string name="fixed_expenditure">고정 지출</string>
+    <string name="financial">가계부</string>
+
+    <string name="my_account">나의 계정</string>
+    <string name="manage_friends">친구 관리</string>
+    <string name="terms_of_use">이용약관</string>
+    <string name="contact_us">문의하기</string>
+    <string name="sign_out">로그아웃</string>
+    <string name="withdrawal">회원탈퇴</string>
+
+    <string name="modification_of_personal_information">개인 정보 수정</string>
+    <string name="change_nickname">닉네임 변경</string>
+    <string name="change_userinfo">사용자 정보 변경</string>
+    <string name="change_password">비밀번호 변경</string>
+    <string name="nickname">닉네임</string>
+    <string name="text_management">문자 관리</string>
+    <string name="sms_receiving_function">SMS 수신 기능</string>
+    <string name="display_text_source">문자 원본 표시</string>
+    <string name="classification_management">분류 관리</string>
+    <string name="manage_categories">카테고리 관리</string>
+    <string name="large_categories_management">대분류 관리</string>
+    <string name="subclassification_management">소분류 관리</string>
+    <string name="always_show">항상 표시</string>
+    <string name="always_hide">항상 숨김</string>
+
+    <string name="hobby">취미</string>
+    <string name="life">생활</string>
+    <string name="transfer">이체</string>
+    <string name="etc">기타</string>
+
+    <string name="ott">OTT</string>
+    <string name="music">음악</string>
+    <string name="book">독서</string>
+    <string name="exercise">운동</string>
+
+    <string name="phone">통신비</string>
+    <string name="home">생활비</string>
+
+    <string name="desposit">예금</string>
+    <string name="savings">적금</string>
+    <string name="installment">할부</string>
+
+    <string name="emailCheck">확인</string>
+    <string name="log_out_cancel">취소</string>
+    <string name="log_out_title">로그아웃하시겠습니까?</string>
+    <string name="withdrawal_title">회원탈퇴하시겠습니까?</string>
+    <string name="withdrawal_content">탈퇴하면 회원님의 모든 정보가 사라집니다.</string>
+
+    <string name="userEmail">이메일</string>
+    <string name="userPassword">비밀번호</string>
+    <string name="userPasswordCheck">비밀번호 확인</string>
+
+    <string name="delete">삭제하기</string>
+    <string name="save">저장하기</string>
+    <string name="create">추가하기</string>
+
+    <string name="bank">자산</string>
+    <string name="amount">금액</string>
+    <string name="content">내용</string>
+    <string name="bank2">농협</string>
+    <string name="amount2">4,350원</string>
+    <string name="content2">CU제주시청점</string>
+    <string name="category2">식비</string>
+
+    <string name="date2">3.2</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

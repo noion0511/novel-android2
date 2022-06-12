@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cycle_array">
+        <item>반복주기를 설정해주세요</item>
+        <item>매주</item>
+        <item>2주</item>
+        <item>한달</item>
+    </string-array>
+</resources>

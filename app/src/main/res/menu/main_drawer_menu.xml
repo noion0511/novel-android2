@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id = "@+id/my_account"
+        android:title = "@string/my_account"
+        />
+    <item android:id = "@+id/manage_friends"
+        android:title = "@string/manage_friends"
+        />
+    <item android:id = "@+id/terms_of_use"
+        android:title = "@string/terms_of_use"
+        />
+    <item android:id = "@+id/contact_us"
+        android:title = "@string/contact_us"
+        />
+    <item android:id = "@+id/sign_out"
+        android:title = "@string/sign_out"
+        />
+    <item android:id = "@+id/withdrawal"
+        android:title = "@string/withdrawal"
+        />
+</menu>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category_array">
+        <item>분류 종류를 설정해주세요</item>
+        <item>식비</item>
+        <item>교통</item>
+        <item>생활</item>
+        <item>주거</item>
+        <item>패션</item>
+        <item>여가</item>
+        <item>월급</item>
+        <item>부수입</item>
+        <item>용돈</item>
+        <item>금융소득</item>
+        <item>기타</item>
+    </string-array>
+</resources>
