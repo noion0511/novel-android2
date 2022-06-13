@@ -26,6 +26,7 @@ internal class NetworkResponseCall<S: Any, E: Any>(
                 val body = response.body()
                 val code = response.code()
                 val error = response.errorBody()
+                val isSuccess = response.isSuccessful
 
                 if (response.isSuccessful) {
                     if (body != null) {

@@ -10,8 +10,8 @@ interface Service {
     @GET("api/boards")
     suspend fun setBoardListResponse(): NetworkResponse<List<Board>, ErrorResponse>
 
-    @GET("api/boards")
-    suspend fun setBoardResponse(@Query("boardId") boardId: Long): NetworkResponse<Board, ErrorResponse>
+    @GET("api/boards/{boardId}")
+    suspend fun setBoardResponse(@Path("boardId") boardId: Long): NetworkResponse<Board, ErrorResponse>
 
     @GET("api/posts")
     suspend fun setPostListResponse(@Query("boardId") boardId: Long): NetworkResponse<List<Post>, ErrorResponse>
