@@ -16,6 +16,9 @@ interface Service {
     @GET("api/posts")
     suspend fun setPostListResponse(@Query("boardId") boardId: Long): NetworkResponse<List<Post>, ErrorResponse>
 
+    @GET("api/posts/{postId}")
+    suspend fun setPostResponse(@Path("postId") postId: Long): NetworkResponse<Post, ErrorResponse>
+
     //--------------------------------------------
 
     @POST("v1/signin")

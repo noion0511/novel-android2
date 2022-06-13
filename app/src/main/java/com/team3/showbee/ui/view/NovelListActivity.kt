@@ -7,10 +7,7 @@ import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.team3.showbee.R
-import com.team3.showbee.databinding.ActivityMainBinding
 import com.team3.showbee.databinding.ActivityNovelListBinding
-import com.team3.showbee.ui.adapter.BoardAdapter
 import com.team3.showbee.ui.adapter.FinancialContentAdapter
 import com.team3.showbee.ui.viewmodel.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -43,22 +40,18 @@ class NovelListActivity : AppCompatActivity() {
         binding.recyclerview.layoutManager = LinearLayoutManager(this)
 
         postAdapter.setItemClickListener(object : FinancialContentAdapter.OnItemClickListener {
-//            override fun onClick(v: View, position: Int, boardId: Long) {
-//                Log.d("board", "adapter: ${position}")
-//                val intent = Intent(this@NovelListActivity, NovelListActivity::class.java)
-//                    .putExtra("id", boardId)
-//                startActivity(intent)
-//            }
-
-            override fun onClick(v: View, position: Int) {
+            override fun onClick(v: View, position: Int, pId: Long) {
                 Log.d("board", "adapter: ${position}")
+                val intent = Intent(this@NovelListActivity, BoardActivity::class.java)
+                    .putExtra("pid", pId)
+                startActivity(intent)
             }
         })
     }
 
     private fun observeData() {
         with(viewModel) {
-            post.observe(this@NovelListActivity) { event ->
+            postList.observe(this@NovelListActivity) { event ->
                 event.getContentIfNotHandled()?.let {
                     postAdapter.setItems(it)
                     postAdapter.notifyDataSetChanged()

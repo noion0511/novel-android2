@@ -38,8 +38,11 @@ class UserViewModel @Inject constructor(
     private val _board = MutableLiveData<Event<Board>>()
     val board : LiveData<Event<Board>> = _board
 
-    private val _post = MutableLiveData<Event<List<Post>>>()
-    val post : LiveData<Event<List<Post>>> = _post
+    private val _postList = MutableLiveData<Event<List<Post>>>()
+    val postList : LiveData<Event<List<Post>>> = _postList
+
+    private val _post = MutableLiveData<Event<Post>>()
+    val post : LiveData<Event<Post>> = _post
 
     fun setBoardList() {
         viewModelScope.launch {
@@ -88,6 +91,28 @@ class UserViewModel @Inject constructor(
     fun setPostList(boardId: Long) {
         viewModelScope.launch {
             val response = repository.setPostList(boardId)
+            val type = "노벨"
+
+            when(response) {
+                is NetworkResponse.Success -> {
+                    _postList.postValue(Event(response.body))
+                }
+                is NetworkResponse.ApiError -> {
+                    postValueEvent(0, type)
+                }
+                is NetworkResponse.NetworkError -> {
+                    postValueEvent(1, type)
+                }
+                is NetworkResponse.UnknownError -> {
+                    postValueEvent(2, type)
+                }
+            }
+        }
+    }
+
+    fun setPost(postId: Long) {
+        viewModelScope.launch {
+            val response = repository.setPost(postId)
             val type = "노벨"
 
             when(response) {

@@ -42,14 +42,14 @@ class FinancialContentAdapter(): RecyclerView.Adapter<FinancialContentAdapter.Ho
             if(pos!= RecyclerView.NO_POSITION)
             {
                 itemView.setOnClickListener {
-                    itemClickListener.onClick(itemView,pos)
+                    itemClickListener.onClick(itemView, pos, item.pId)
                 }
             }
         }
     }
 
     interface OnItemClickListener {
-        fun onClick(v: View, position: Int)
+        fun onClick(v: View, position: Int, pId: Long)
     }
 
     fun setItemClickListener(onItemClickListener: FinancialContentAdapter.OnItemClickListener) {

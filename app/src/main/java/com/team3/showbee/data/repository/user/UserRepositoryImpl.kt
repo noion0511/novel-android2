@@ -23,6 +23,10 @@ class UserRepositoryImpl @Inject constructor(
         return apiService.setPostListResponse(boardId)
     }
 
+    override suspend fun setPost(postId: Long): NetworkResponse<Post, ErrorResponse> {
+        return apiService.setPostResponse(postId)
+    }
+
     override suspend fun signUp(
         email: String,
         password: String,

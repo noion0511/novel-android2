@@ -1,14 +1,50 @@
 package com.team3.showbee.ui.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.team3.showbee.R
+import com.team3.showbee.databinding.ActivityBoardBinding
+import com.team3.showbee.databinding.ActivityNovelListBinding
+import com.team3.showbee.ui.adapter.FinancialContentAdapter
+import com.team3.showbee.ui.viewmodel.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class BoardActivity : AppCompatActivity() {
+    private var _binding: ActivityBoardBinding? = null
+    private val binding: ActivityBoardBinding get() = requireNotNull(_binding)
+    private lateinit var viewModel: UserViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_board)
+        _binding = ActivityBoardBinding.inflate(layoutInflater)
+        viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+        setContentView(binding.root)
+
+        initView()
+        observeData()
+    }
+
+    private fun initView() {
+        if (intent.hasExtra("pid")) {
+            val pId = intent.getLongExtra("pid", 1)
+            viewModel.setPost(pId)
+        }
+    }
+
+    private fun observeData() {
+        with(viewModel) {
+            post.observe(this@BoardActivity) { event ->
+                event.getContentIfNotHandled()?.let {
+                    binding.title.text = it.title
+                    binding.content.text = it.content
+                }
+            }
+        }
     }
 }

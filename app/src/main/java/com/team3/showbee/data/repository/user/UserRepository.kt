@@ -10,6 +10,7 @@ interface UserRepository {
     suspend fun setBoard(boardId: Long): NetworkResponse<Board, ErrorResponse>
     suspend fun setBoardList(): NetworkResponse<List<Board>, ErrorResponse>
     suspend fun setPostList(boardId: Long): NetworkResponse<List<Post>, ErrorResponse>
+    suspend fun setPost(postId: Long): NetworkResponse<Post, ErrorResponse>
     suspend fun signUp(email:String, password: String, username: String): NetworkResponse<BaseResponse, ErrorResponse>
     suspend fun deleteUser(): NetworkResponse<BaseResponse, ErrorResponse>
     suspend fun emailCheck(email:String): NetworkResponse<Boolean, ErrorResponse>
