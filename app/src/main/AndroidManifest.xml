@@ -14,6 +14,9 @@
         android:theme="@style/Theme.ShowBee"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.view.AddPostActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.view.BoardActivity"
             android:exported="false" />
         <activity

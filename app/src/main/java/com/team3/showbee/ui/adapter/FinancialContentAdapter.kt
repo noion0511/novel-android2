@@ -34,7 +34,7 @@ class FinancialContentAdapter(): RecyclerView.Adapter<FinancialContentAdapter.Ho
 
     inner class Holder(var binding: ListContentItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Post) {
-            binding.textView13.text = item.pId.toString()
+            binding.textView13.text = item.sequence.toString() + "화"
             binding.textView12.text = item.title
             binding.textView14.text = item.hits.toString()
 
@@ -42,7 +42,7 @@ class FinancialContentAdapter(): RecyclerView.Adapter<FinancialContentAdapter.Ho
             if(pos!= RecyclerView.NO_POSITION)
             {
                 itemView.setOnClickListener {
-                    itemClickListener.onClick(itemView, pos, item.pId)
+                    itemClickListener.onClick(itemView, pos, item.pid)
                 }
             }
         }

@@ -65,8 +65,8 @@ class UpdateFinancialActivity : AppCompatActivity() {
             }
 
             binding.save.setOnClickListener {
-                viewModel.update(fid = fid, date = binding.editTextDay.text.toString(), content = binding.editTextContent.text.toString(),
-                    category = binding.editTextCategory.text.toString(), price = binding.editTextAmount.text.toString(), bank = binding.editTextBank.text.toString(), memo = binding.memo.text.toString(), inoutcome = inoutcome)
+//                viewModel.update(fid = fid, date = binding.editTextDay.text.toString(), content = binding.editTextContent.text.toString(),
+//                    category = binding.editTextCategory.text.toString(), price = binding.editTextAmount.text.toString(), bank = binding.editTextBank.text.toString(), memo = binding.memo.text.toString(), inoutcome = inoutcome)
             }
         }
 
@@ -108,19 +108,19 @@ class UpdateFinancialActivity : AppCompatActivity() {
             }
 
             financial.observe(this@UpdateFinancialActivity) { event ->
-                event.getContentIfNotHandled()?.let {
-                    binding.model = it
-                    inoutcome = it.inoutcome
-                    if (it.inoutcome) {
-                        binding.choiceIncomeExpense.check(R.id.radioButton)
-                        binding.radioButton.setTextColor(Color.parseColor("#FF8B00"))
-                        binding.radioButton2.setTextColor(Color.parseColor("#989898"))
-                    } else {
-                        binding.choiceIncomeExpense.check(R.id.radioButton2)
-                        binding.radioButton.setTextColor(Color.parseColor("#989898"))
-                        binding.radioButton2.setTextColor(Color.parseColor("#FF8B00"))
-                    }
-                }
+//                event.getContentIfNotHandled()?.let {
+//                    binding.model = it
+//                    inoutcome = it.inoutcome
+//                    if (it.inoutcome) {
+//                        binding.choiceIncomeExpense.check(R.id.radioButton)
+//                        binding.radioButton.setTextColor(Color.parseColor("#FF8B00"))
+//                        binding.radioButton2.setTextColor(Color.parseColor("#989898"))
+//                    } else {
+//                        binding.choiceIncomeExpense.check(R.id.radioButton2)
+//                        binding.radioButton.setTextColor(Color.parseColor("#989898"))
+//                        binding.radioButton2.setTextColor(Color.parseColor("#FF8B00"))
+//                    }
+//                }
             }
         }
     }

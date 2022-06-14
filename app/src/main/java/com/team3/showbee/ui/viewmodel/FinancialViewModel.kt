@@ -33,9 +33,9 @@ class FinancialViewModel @Inject constructor(
     private val _financial = MutableLiveData<Event<Financial>>()
     val financial : LiveData<Event<Financial>> = _financial
 
-    fun create(date: String, content: String, price: String, category: String, bank: String, memo: String, inoutcome: Boolean) {
+    fun create(title: String, content: String, writer: String) {
         viewModelScope.launch {
-            val financial = Financial(date = date, content = content, price = price, category = category, bank = bank, memo = memo, inoutcome = inoutcome)
+            val financial = Financial(title = title, content = content, writer = writer)
             val response = repository.createFinancial(financial)
 
             when(response) {
@@ -139,27 +139,27 @@ class FinancialViewModel @Inject constructor(
         }
     }
 
-    fun update(fid: Long, date: String, content: String, price: String, category: String, bank: String, memo: String, inoutcome: Boolean) {
-        viewModelScope.launch {
-            val financial = Financial(fid = fid, date = date, content = content, price = price, category = category, bank = bank, memo = memo, inoutcome = inoutcome)
-            val response = repository.createFinancial(financial)
-
-            when(response) {
-                is NetworkResponse.Success -> {
-                    _msg.postValue(Event(response.body.toString()))
-                }
-                is NetworkResponse.ApiError -> {
-                    postValueEvent(0)
-                }
-                is NetworkResponse.NetworkError -> {
-                    postValueEvent(1)
-                }
-                is NetworkResponse.UnknownError -> {
-                    postValueEvent(2)
-                }
-            }
-        }
-    }
+//    fun update(fid: Long, date: String, content: String, price: String, category: String, bank: String, memo: String, inoutcome: Boolean) {
+//        viewModelScope.launch {
+//            val financial = Financial(fid = fid, date = date, content = content, price = price, category = category, bank = bank, memo = memo, inoutcome = inoutcome)
+//            val response = repository.createFinancial(financial)
+//
+//            when(response) {
+//                is NetworkResponse.Success -> {
+//                    _msg.postValue(Event(response.body.toString()))
+//                }
+//                is NetworkResponse.ApiError -> {
+//                    postValueEvent(0)
+//                }
+//                is NetworkResponse.NetworkError -> {
+//                    postValueEvent(1)
+//                }
+//                is NetworkResponse.UnknownError -> {
+//                    postValueEvent(2)
+//                }
+//            }
+//        }
+//    }
 
     fun delete(fid: Long) {
         viewModelScope.launch {

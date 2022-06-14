@@ -55,9 +55,9 @@
 
             <TextView
                 android:id="@+id/title"
-                android:layout_width="80dp"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:text="소설 제목"
+                android:text="소설 소제목"
                 android:textSize="18sp" />
 
             <EditText
@@ -79,7 +79,7 @@
                 android:id="@+id/content"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="소설 소개"
+                android:text="소설 내용"
                 android:textSize="18sp" />
 
             <EditText

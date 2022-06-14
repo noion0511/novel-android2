@@ -111,8 +111,7 @@
                     android:layout_weight="1"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:ems="10"
-                    android:text="@{model.date}" />
+                    android:ems="10"/>
             </LinearLayout>
 
             <LinearLayout
@@ -134,7 +133,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:text="@{model.bank}"
                     android:inputType="textPersonName" />
             </LinearLayout>
 
@@ -157,7 +155,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:text="@{model.category}"
                     android:inputType="textPersonName" />
             </LinearLayout>
 
@@ -180,7 +177,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:text="@{model.price}"
                     android:inputType="textPersonName" />
             </LinearLayout>
 
@@ -203,7 +199,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:text="@{model.content}"
                     android:inputType="textPersonName" />
             </LinearLayout>
 
@@ -241,7 +236,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@{model.memo}"
                     android:inputType="textPersonName" />
             </LinearLayout>
 

@@ -35,31 +35,22 @@
             app:layout_constraintStart_toStartOf="parent"
             android:contentDescription="고정지출 추가" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:backgroundTint="@color/app_color3"
-            android:clickable="true"
-            app:layout_constraintBottom_toTopOf="@+id/btn_add_expense_and_income"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/change"
-            app:tint="@color/white"
-            android:contentDescription="가계부로 전환" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layout_swipe"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/include">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
 
-        </androidx.recyclerview.widget.RecyclerView>
+            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView

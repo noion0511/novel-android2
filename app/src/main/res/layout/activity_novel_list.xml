@@ -126,14 +126,52 @@
         </LinearLayout>
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/layout_swipe"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        tools:listitem="@layout/list_content_item"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout8" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            tools:listitem="@layout/list_content_item" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/app_color3"
+        android:clickable="true"
+        android:contentDescription="고정지출 추가"
+        android:src="@drawable/pen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98"
+        app:tint="@android:color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/app_color3"
+        android:clickable="true"
+        android:contentDescription="고정지출 추가"
+        android:src="@drawable/delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88"
+        app:tint="@android:color/white" />
 </androidx.constraintlayout.widget.ConstraintLayout>

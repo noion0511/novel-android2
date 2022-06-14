@@ -30,8 +30,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: UserViewModel
     private lateinit var boardAdapter: BoardAdapter
 
-    var triger = "financial"
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
@@ -82,14 +80,8 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         binding.btnAddExpenseAndIncome.setOnClickListener {
-            if (triger == "schedule") {
-                val intent = Intent(this, AddIncomeExpenditureActivity::class.java)
-                startActivity(intent)
-            }
-            else {
-                val intent = Intent(this, AddFinancialActivity::class.java)
-                startActivity(intent)
-            }
+            val intent = Intent(this, AddFinancialActivity::class.java)
+            startActivity(intent)
         }
 
         boardAdapter = BoardAdapter()
@@ -104,6 +96,12 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         })
+
+        val swipe = binding.layoutSwipe
+        swipe.setOnRefreshListener {
+            viewModel.setBoardList()
+            swipe.isRefreshing = false
+        }
 
         viewModel.setBoardList()
     }

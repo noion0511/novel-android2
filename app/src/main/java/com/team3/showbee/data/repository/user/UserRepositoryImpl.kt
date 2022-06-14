@@ -1,9 +1,6 @@
 package com.team3.showbee.data.repository.user
 
-import com.team3.showbee.data.entity.BaseResponse
-import com.team3.showbee.data.entity.Board
-import com.team3.showbee.data.entity.ErrorResponse
-import com.team3.showbee.data.entity.Post
+import com.team3.showbee.data.entity.*
 import com.team3.showbee.data.network.NetworkResponse
 import com.team3.showbee.data.network.api.Service
 import javax.inject.Inject
@@ -13,6 +10,10 @@ class UserRepositoryImpl @Inject constructor(
 ) : UserRepository {
     override suspend fun setBoard(boardId: Long): NetworkResponse<Board, ErrorResponse> {
         return apiService.setBoardResponse(boardId)
+    }
+
+    override suspend fun deleteBoard(boardId: Long): NetworkResponse<Boolean, ErrorResponse> {
+        return apiService.deleteBoardResponse(boardId)
     }
 
     override suspend fun setBoardList(): NetworkResponse<List<Board>, ErrorResponse> {
@@ -25,6 +26,18 @@ class UserRepositoryImpl @Inject constructor(
 
     override suspend fun setPost(postId: Long): NetworkResponse<Post, ErrorResponse> {
         return apiService.setPostResponse(postId)
+    }
+
+    override suspend fun deletePost(postId: Long): NetworkResponse<Boolean, ErrorResponse> {
+        return apiService.deletePostResponse(postId)
+    }
+
+    override suspend fun createPost(post: PostRequestDto): NetworkResponse<Int, ErrorResponse> {
+        return apiService.createPostResponse(post)
+    }
+
+    override suspend fun updatePost(postId: Long, postMap: HashMap<String,String>): NetworkResponse<Int, ErrorResponse> {
+        return apiService.updatePostResponse(postId, postMap)
     }
 
     override suspend fun signUp(

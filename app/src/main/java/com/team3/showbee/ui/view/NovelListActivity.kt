@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.team3.showbee.databinding.ActivityNovelListBinding
@@ -34,6 +35,22 @@ class NovelListActivity : AppCompatActivity() {
             val boardId = intent.getLongExtra("id", 1)
             viewModel.setPostList(boardId)
             viewModel.setBoard(boardId)
+
+            val swipe = binding.layoutSwipe
+            swipe.setOnRefreshListener {
+                viewModel.setPostList(boardId)
+                swipe.isRefreshing = false
+            }
+
+            binding.btnCreate.setOnClickListener {
+                val intent = Intent(this, AddPostActivity::class.java)
+                    .putExtra("id", boardId)
+                startActivity(intent)
+            }
+
+            binding.btnDelete.setOnClickListener {
+                viewModel.deleteBoard(boardId)
+            }
         }
         postAdapter = FinancialContentAdapter()
         binding.recyclerview.adapter = postAdapter
@@ -63,6 +80,12 @@ class NovelListActivity : AppCompatActivity() {
                     binding.tvBoardWriter.text = it.writer
                     binding.tvCurrentHits.text = it.totalHits.toString()
                     binding.tvCreateDate.text = it.createdDate.split("T")[0]
+                }
+            }
+            bool.observe(this@NovelListActivity) { event ->
+                event.getContentIfNotHandled()?.let {
+                    Toast.makeText(this@NovelListActivity, "성공했습니다.", Toast.LENGTH_SHORT).show()
+                    finish()
                 }
             }
         }

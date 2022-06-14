@@ -64,7 +64,7 @@ class SignUpActivity : AppCompatActivity() {
                 }
             }
 
-            emailCheck.observe(this@SignUpActivity) { event ->
+            bool.observe(this@SignUpActivity) { event ->
                 event.getContentIfNotHandled()?.let {
                     if (it) {
                         Toast.makeText(this@SignUpActivity, "이미 사용중인 이메일입니다.", Toast.LENGTH_SHORT).show()

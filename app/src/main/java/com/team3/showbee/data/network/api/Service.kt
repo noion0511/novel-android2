@@ -13,11 +13,25 @@ interface Service {
     @GET("api/boards/{boardId}")
     suspend fun setBoardResponse(@Path("boardId") boardId: Long): NetworkResponse<Board, ErrorResponse>
 
+    @DELETE("api/boards/{boardId}")
+    suspend fun deleteBoardResponse(@Path("boardId") boardId: Long): NetworkResponse<Boolean, ErrorResponse>
+
     @GET("api/posts")
     suspend fun setPostListResponse(@Query("boardId") boardId: Long): NetworkResponse<List<Post>, ErrorResponse>
 
     @GET("api/posts/{postId}")
     suspend fun setPostResponse(@Path("postId") postId: Long): NetworkResponse<Post, ErrorResponse>
+
+    @POST("api/posts")
+    suspend fun createPostResponse(
+        @Body post: PostRequestDto) : NetworkResponse<Int, ErrorResponse>
+
+    @PATCH("api/posts/{postId}")
+    suspend fun updatePostResponse(
+        @Path("postId") postId: Long, @Body postMap: HashMap<String,String>) : NetworkResponse<Int, ErrorResponse>
+
+    @DELETE("api/posts/{postId}")
+    suspend fun deletePostResponse(@Path("postId") postId: Long): NetworkResponse<Boolean, ErrorResponse>
 
     //--------------------------------------------
 
@@ -44,7 +58,7 @@ interface Service {
     suspend fun emailCheckResponse(@Path("email") email: String): NetworkResponse<Boolean, ErrorResponse>
 
     //---- financial
-    @POST("v1/financial/post")
+    @POST("api/boards")
     suspend fun createFinancialResponse(
         @Body financial: Financial) : NetworkResponse<Int, ErrorResponse>
 
